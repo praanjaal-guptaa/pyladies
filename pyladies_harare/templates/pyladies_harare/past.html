@@ -20,15 +20,15 @@
     <div class="pager">
         <span class="previous">
             {% if p_meetups.has_previous %}
-                <a href="?page={{ meetups.previous_page_number }}">&larr; Previous</a>
+                <a href="?page={{ p_meetups.previous_page_number }}">&larr; Previous</a>
             {% endif %}
         </span>
         <span class="current">
-            Page {{ p_meetups.number }} of {{ meetups.paginator.num_pages }}.
+            Page {{ p_meetups.number }} of {{ p_meetups.paginator.num_pages }}.
         </span>
         <span class="next">
             {% if p_meetups.has_next %}
-            <a href="?page={{ meetups.next_page_number }}" >Next &rarr;</a>
+            <a href="?page={{ p_meetups.next_page_number }}" >Next &rarr;</a>
             {% endif %}
         </span>
     </div>

@@ -20,7 +20,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     summary = models.TextField()
     text = models.TextField()
-    picture = models.ImageField(max_length=200, null=True, blank=True)
+    picture = models.CharField(max_length=200, null=True, blank=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     slug = AutoSlugField(populate_from='title', unique=True)
@@ -53,7 +53,7 @@ class Contact(models.Model):
 class Page(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
-    picture = models.ImageField(max_length=200, null=True, blank=True)
+    picture = models.CharField(max_length=200, null=True, blank=True)
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)

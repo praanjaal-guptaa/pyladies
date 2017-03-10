@@ -57,6 +57,7 @@ def past_meetups(request):
     assert isinstance(request, HttpRequest)
     upcoming = get_meetup()
     meetup_list = get_past_meetup()
+    categories = get_category()
 
     paginator = Paginator(meetup_list, 2)  # Show 2 meet-ups per page
     page = request.GET.get('page')
@@ -77,7 +78,8 @@ def past_meetups(request):
                 'year': datetime.now().year,
                 'p_meetups': p_meetups,
                 'upcoming': upcoming,
-            }
+                'categories': categories,
+             }
             )
 
 

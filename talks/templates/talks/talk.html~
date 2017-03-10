@@ -1,0 +1,3 @@
+{% extends "pyladieshre/base.html" %}
+{% load i18n %}
+{% block %}

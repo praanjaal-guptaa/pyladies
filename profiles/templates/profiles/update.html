@@ -1,0 +1,17 @@
+{% extends 'pyladies_harare/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h2>Update your profile for Pyladies Harare</h2>
+<br>
+{% crispy form form.helper %}
+
+{% for p in user_profile %}
+
+<form action="{% url 'profiles:update' %}" method=post>
+          {% csrf_token %}
+</form>
+
+{% endfor %}
+
+{% endblock %}

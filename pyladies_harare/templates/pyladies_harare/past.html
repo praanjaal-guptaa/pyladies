@@ -1,0 +1,42 @@
+{% extends 'pyladies_harare/base.html' %}
+
+{% block content %}
+
+<h2>Past Meet-ups</h2>
+
+{% if p_meetups %}
+
+{% for meetup in p_meetups %}
+   <div>
+
+    <h3>{{ meetup.name }} </h3>
+    <p><strong>Location:</strong> {{ meetup.location }} </p>
+    <p><strong>Date:</strong> {{ meetup.fromdate }} -  {{ meetup.todate }}</p>
+    <p><strong>Website:</strong> <a href="">{{meetup.website }}</a></p>
+    <p>{{ meetup.comments }} </p> </div>
+    <br />
+  {% endfor %}
+
+    <div class="pager">
+        <span class="previous">
+            {% if p_meetups.has_previous %}
+                <a href="?page={{ meetups.previous_page_number }}">&larr; Previous</a>
+            {% endif %}
+        </span>
+        <span class="current">
+            Page {{ p_meetups.number }} of {{ meetups.paginator.num_pages }}.
+        </span>
+        <span class="next">
+            {% if p_meetups.has_next %}
+            <a href="?page={{ meetups.next_page_number }}" >Next &rarr;</a>
+            {% endif %}
+        </span>
+    </div>
+
+{% else %}
+
+<p>Nothing to see here.</p>
+
+{% endif %}
+
+{% endblock %}

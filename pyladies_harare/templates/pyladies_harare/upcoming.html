@@ -1,0 +1,25 @@
+{% extends 'pyladies_harare/base.html' %}
+
+{% block content %}
+
+<h2>Upcoming Meet-ups</h2>
+{% if meetups %}
+
+{% for meetup in meetups %}
+   <div>
+
+    <h3>{{ meetup.name }} </h3>
+    <p><strong>Location:</strong> {{ meetup.location }} </p>
+    <p><strong>Date:</strong> {{ meetup.fromdate }} -  {{ meetup.todate }}</p>
+    <p><strong>Website:</strong> <a href="">{{ meetup.website }}</a></p>
+    <p>{{ meetup.comments }} </p> </div>
+    <br />
+  {% endfor %}
+
+{% else %}
+
+<p>Nothing to see here.</p>
+
+{% endif %}
+
+{% endblock %}

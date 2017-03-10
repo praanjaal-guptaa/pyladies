@@ -1,0 +1,11 @@
+{% extends 'pyladies_harare/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h2>Login</h2>
+<br>
+{% crispy form form.helper %}
+<form action="{% url 'accounts:login' %}" method=post>
+          {% csrf_token %}
+</form>
+{% endblock %}

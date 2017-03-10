@@ -1,0 +1,10 @@
+{% extends 'pyladies_harare/base.html' %}
+
+{% block content %}
+<h2>Registration for Pyladies Harare was successful!</h2>
+<br>
+<p>You have successfully registered. Please click <a href="{% url 'accounts:login' %}">here</a> to
+    <a href="{% url 'accounts:login' %}">login</a> and use our website.
+</p>
+
+{% endblock %}

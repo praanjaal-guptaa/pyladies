@@ -1,0 +1,1 @@
+web: gunicorn harare.wsgi --log-file -

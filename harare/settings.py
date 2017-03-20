@@ -27,7 +27,14 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = 'xnk36o$h1m!)p0y!b(63myjcw_69be&1k@e91(jdftia3^h1h*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# The following checks to see if running on Heroku and then disables debugging.  
+ON_HEROKU = False
+if 'DATABASE_URL' in os.environ:
+    ON_HEROKU = True
+
 DEBUG = True
+if ON_HEROKU:
+	DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 

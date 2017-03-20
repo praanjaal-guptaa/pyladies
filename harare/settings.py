@@ -28,6 +28,7 @@ SECRET_KEY = 'xnk36o$h1m!)p0y!b(63myjcw_69be&1k@e91(jdftia3^h1h*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # The following checks to see if running on Heroku and then disables debugging.  
+# http://stackoverflow.com/questions/9383450/how-can-i-detect-herokus-environment
 ON_HEROKU = False
 if 'DATABASE_URL' in os.environ:
     ON_HEROKU = True

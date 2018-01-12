@@ -194,7 +194,7 @@ class CodeofConductView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(CodeofConductView, self).get_context_data(**kwargs)
         context['title'] = 'Code of Conduct'
-        context['pages'] = Page.objects.filter(slug='code_of_conduct')
+        context['pages'] = Page.objects.filter(slug='codeofconduct')
         context['categories'] = get_category()
         context['meetups'] = get_meetup()
         context['year'] = datetime.now().year

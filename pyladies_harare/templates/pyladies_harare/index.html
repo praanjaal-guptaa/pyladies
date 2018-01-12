@@ -1,5 +1,7 @@
 {% extends 'pyladies_harare/base.html' %}
 
+{% load staticfiles %}
+
 {% block content %}
                 <h1 class="page-header">
                     Blog Posts
@@ -16,7 +18,7 @@
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.published_date }}</p>
                 <hr>
-                <img class="img-responsive" src="{{ post.picture }}" alt="">
+                <img class="img-responsive" src="{% static '{{ post.picture }}' %}" alt="">
                 <hr>
                 <p>{{ post.summary }} </p>
                 <a class="btn btn-primary" href="{% url 'post_detail' pk=post.pk %}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
